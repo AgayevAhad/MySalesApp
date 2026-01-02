@@ -1,0 +1,208 @@
+{
+    "Meyvə və Tərəvəz": [
+        { 
+            "id": 1, 
+            "name": "Qırmızı Alma", 
+            "price": 1.5, 
+            "barcode": "1001", 
+            "description": "Təzə, şirin qırmızı alma.",
+            "stock": 150,
+            "units": "kq"
+        },
+        { 
+            "id": 2, 
+            "name": "Pomidor (Yerli)", 
+            "price": 2.8, 
+            "barcode": "1002", 
+            "description": "Dadlı yerli pomidor.",
+            "stock": 80,
+            "units": "kq"
+        },
+        { 
+            "id": 12, 
+            "name": "Cəfəri (Dəstə)", 
+            "price": 0.4, 
+            "barcode": "1003", 
+            "description": "Təzə yaşıl cəfəri.",
+            "stock": 200,
+            "units": "dəstə"
+        }
+    ],
+    "Çörək və Qənnadı məmulatları": [
+        {
+            "id": 3,
+            "name": "Kəpəkli Çörək",
+            "price": 0.8,
+            "barcode": "2001",
+            "description": "Sağlam kəpəkli çörək.",
+            "stock": 50,
+            "units": "ədəd"
+        },
+        {
+            "id": 4,
+            "name": "Şokoladlı Keks",
+            "price": 1.2,
+            "barcode": "2002",
+            "description": "Kiçik şokoladlı keks.",
+            "stock": 60,
+            "units": "ədəd"
+        },
+        {
+            "id": 13,
+            "name": "Kruassan (Yağlı)",
+            "price": 1.5,
+            "barcode": "2003",
+            "description": "Səhər yeməyi üçün xırtıldayan kruassan.",
+            "stock": 40,
+            "units": "ədəd"
+        }
+    ],
+    "Ət və Ət məhsulları": [
+        {
+            "id": 11,
+            "name": "Mal Əti (1kq)",
+            "price": 14.0,
+            "barcode": "7001",
+            "description": "Birinci növ mal əti.",
+            "stock": 45,
+            "units": "kq"
+        },
+        {
+            "id": 14,
+            "name": "Toyuq Filesi",
+            "price": 7.5,
+            "barcode": "7002",
+            "description": "Qril üçün uyğun toyuq filesi.",
+            "stock": 70,
+            "units": "kq"
+        }
+    ],
+    "Balıq və Dəniz məhsulları": [
+        {
+            "id": 5,
+            "name": "Dondurulmuş Krevet",
+            "price": 15.0,
+            "barcode": "3001",
+            "description": "Yüksək keyfiyyətli dondurulmuş krevet.",
+            "stock": 30,
+            "units": "kq"
+        }
+    ],
+    "Süd və Süd məhsulları": [
+        { 
+            "id": 6, 
+            "name": "Kənd Südü (1L)", 
+            "price": 2.5, 
+            "barcode": "4001", 
+            "description": "Təzə kənd südü.",
+            "stock": 35,
+            "units": "ədəd"
+        },
+        {
+            "id": 7,
+            "name": "Qatıq (500qr)",
+            "price": 1.0,
+            "barcode": "4002",
+            "description": "Ev qatığı.",
+            "stock": 50,
+            "units": "ədəd"
+        }
+    ],
+    "Quru ərzaqlar": [
+        {
+            "id": 15,
+            "name": "Düyü (1kq)",
+            "price": 2.2,
+            "barcode": "8001",
+            "description": "Uzun dənəli düyü.",
+            "stock": 100,
+            "units": "kq"
+        }
+    ],
+    "Şirniyyat və qəlyanaltılar": [
+        {
+            "id": 10,
+            "name": "Badamlı Şokolad",
+            "price": 3.5,
+            "barcode": "6001",
+            "description": "Badamlı lüks şokolad.",
+            "stock": 120,
+            "units": "ədəd"
+        }
+    ],
+    "İçkilər": [
+        {
+            "id": 8,
+            "name": "Qazsız Su (0.5L)",
+            "price": 0.5,
+            "barcode": "5001",
+            "description": "Əlaqəli qazsız su.",
+            "stock": 200,
+            "units": "ədəd"
+        },
+        {
+            "id": 9,
+            "name": "Nar Şirəsi (1L)",
+            "price": 2.0,
+            "barcode": "5002",
+            "description": "Təbii nar şirəsi.",
+            "stock": 90,
+            "units": "ədəd"
+        }
+    ],
+    "Konservləşdirilmiş məhsullar": [
+        {
+            "id": 16,
+            "name": "Zeytun Konservi",
+            "price": 3.0,
+            "barcode": "9001",
+            "description": "Qara zeytun konservi.",
+            "stock": 55,
+            "units": "ədəd"
+        }
+    ],
+    "Dondurulmuş məhsullar": [
+        {
+            "id": 17,
+            "name": "Dondurma (Vanil)",
+            "price": 1.8,
+            "barcode": "1101",
+            "description": "Klassik vanil dondurması.",
+            "stock": 100,
+            "units": "ədəd"
+        }
+    ],
+    "Ev və məişət təmizliyi vasitələri": [
+        {
+            "id": 18,
+            "name": "Qab Yuma Geli",
+            "price": 4.5,
+            "barcode": "1201",
+            "description": "Ətirli qab yuma geli.",
+            "stock": 40,
+            "units": "ədəd"
+        }
+    ],
+    "Uşaq məhsulları": [
+        {
+            "id": 19,
+            "name": "Uşaq Bezi (XL)",
+            "price": 18.0,
+            "barcode": "1301",
+            "description": "Böyük ölçüdə uşaq bezləri paketi.",
+            "stock": 25,
+            "units": "paket"
+        }
+    ],
+    "Ev heyvanları üçün məhsullar": [
+        {
+            "id": 20,
+            "name": "Pişik Yemi",
+            "price": 5.0,
+            "barcode": "1401",
+            "description": "Quru pişik yemi.",
+            "stock": 60,
+            "units": "kq"
+        }
+    ]
+}

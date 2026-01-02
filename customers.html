@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Müştərilər</title>
+
+    <link rel="stylesheet" href="./css/products.css">
+    <link rel="stylesheet" href="./css/customers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="page" id="customers-page-content">
+
+        <div class="header-with-icons">
+            <h2>Müştərilər</h2>
+            <div class="actions">
+                <button class="action-btn" id="c-search-toggle" title="Axtarış"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="action-btn" id="c-add-toggle" title="Yeni Müştəri"><i
+                        class="fa-solid fa-user-plus"></i></button>
+                <button class="action-btn" id="c-edit-toggle" title="Düzənlə"><i
+                        class="fa-solid fa-pen-to-square"></i></button>
+                <button class="action-btn" id="c-delete-toggle" title="Sil"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+
+        <!-- Axtarış paneli -->
+        <div id="c-search-panel" class="hidden">
+            <input type="text" id="c-search" placeholder="Müştəri adı axtar..." />
+            <div id="c-search-results"></div>
+        </div>
+
+        <!-- Müştəri siyahısı -->
+        <div id="customers-list-wrapper">
+            <div id="customers-list"></div>
+        </div>
+    </div>
+
+    <!-- Düzənlə MODAL -->
+    <div id="c-edit-backdrop" class="modal-backdrop hidden"></div>
+    <div id="c-edit-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="c-edit-title">
+        <div class="modal-header">
+            <h3 id="c-edit-title">Müştərini / əməliyyatları düzənlə</h3>
+            <button id="c-edit-close" class="modal-close" title="Bağla">&times;</button>
+        </div>
+        <div class="modal-body" id="c-edit-body"></div>
+        <div class="modal-footer">
+            <button id="c-edit-save" class="btn primary">Yadda saxla</button>
+        </div>
+    </div>
+
+    <!-- Əlavə et MODAL -->
+    <div id="c-add-backdrop" class="modal-backdrop hidden"></div>
+    <div id="c-add-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="c-add-title">
+        <div class="modal-header">
+            <h3 id="c-add-title">Yeni Müştəri</h3>
+            <button id="c-add-close" class="modal-close" title="Bağla">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-grid">
+                <label>Ad, Soyad*<input id="add-name" type="text" placeholder="Məs: Ayxan Əliyev" required></label>
+                <label>Telefon<input id="add-phone" type="text" placeholder="050-123-4567"></label>
+                <!-- <label>Mobil<input id="add-mobile" type="text" placeholder="(opsional)"></label> -->
+                <label>Ünvan<input id="add-address" type="text" placeholder="(opsional)"></label>
+            </div>
+            <div id="add-error" class="form-error hidden">Ad, Soyad mütləqdir.</div>
+        </div>
+        <div class="modal-footer">
+            <button id="c-add-save" class="btn primary">Əlavə et</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/sync.js"></script>
+    <script src="./js/customers.js"></script>
+</body>
+
+</html>

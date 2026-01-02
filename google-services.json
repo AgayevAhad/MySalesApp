@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850263618848",
+    "project_id": "mysaleapp687",
+    "storage_bucket": "mysaleapp687.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850263618848:android:6e42aee798bd781923d345",
+        "android_client_info": {
+          "package_name": "mysales.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp1OSFoI-m435B7nV-eKlvclgtPSWgxRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

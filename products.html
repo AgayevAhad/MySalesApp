@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Məhsullar</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="page" id="product-page-content">
+
+        <div id="ptr-indicator" class="ptr-indicator">
+            <div class="spinner"></div>
+            <!-- <p>Yeniləmək üçün aşağı sürüşdürün...</p> -->
+        </div>
+        <div class="header-with-icons">
+            <h2>Məhsullar</h2>
+            <div class="actions">
+                <button class="action-btn" id="add-product-btn" title="Yeni məhsul əlavə et">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </button>
+                <button class="action-btn" id="edit-mode-btn" title="Düzənləmə rejimi">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="action-btn" id="delete-mode-btn" title="Silmə rejimi">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="add-product-form" class="hidden">
+            <h3 id="form-title">Yeni Məhsul Əlavə Et</h3>
+            <form id="new-product-form">
+                <input type="hidden" id="new-product-id" value="">
+                <div class="form-group"><label for="new-product-name">Məhsul Adı *</label><input type="text"
+                        id="new-product-name" required></div>
+                <div class="form-group"><label for="new-product-category">Kateqoriya *</label><select
+                        id="new-product-category" required>
+                        <option value="">Kateqoriya seçin</option>
+                    </select></div>
+                <div class="form-group"><label for="new-product-barcode">Barkod *</label><input type="text"
+                        id="new-product-barcode" required></div>
+                <div class="form-group"><label for="new-product-price">Qiymət (AZN) *</label><input type="number"
+                        step="0.01" id="new-product-price" required></div>
+                <div class="form-group"><label for="new-product-stock">Stok Miqdarı *</label><input type="number"
+                        id="new-product-stock" required></div>
+                <div class="form-group"><label for="new-product-units">Stok Vahidi *</label><select
+                        id="new-product-units" required>
+                        <option value="ədəd">ədəd</option>
+                        <option value="kq">kq</option>
+                        <option value="dərə">L</option>
+                        <option value="dodaq">(Paçka,kaset və s)</option>
+                    </select></div>
+                <div class="form-group"><label for="new-product-description">Təsvir (İstəyə bağlı)</label><textarea
+                        id="new-product-description"></textarea></div>
+                <button type="submit" id="save-new-product">Məhsulu Əlavə Et</button>
+                <button type="button" id="cancel-add-product">Ləğv Et</button>
+            </form>
+        </div>
+
+        <div id="search-container">
+            <input type="text" id="product-search" placeholder="Məhsul adı və ya barkodla axtarış edin...">
+            <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i> Axtar</button>
+        </div>
+
+        <div id="product-list-wrapper">
+            <div id="product-list" class="hidden">
+                <p style="margin-top: 20px; color: #555;">Axtarılan Məhsullar burada görünəcək.</p>
+            </div>
+
+            <div id="notifications-container">
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Meyvə və Tərəvəz</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Çörək və Qənnadı məmulatları</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3> Ət və Ət məhsulları</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Balıq və Dəniz məhsulları</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Süd və Süd məhsulları</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Quru ərzaqlar</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Şirniyyat və qəlyanaltılar</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>İçkilər</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Konservləşdirilmiş məhsullar</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Dondurulmuş məhsullar</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Ev və məişət təmizliyi vasitələri</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Uşaq məhsulları</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="summary">
+                        <h3>Ev heyvanları üçün məhsullar</h3>
+                        <p> <strong>Ətraflı görmək üçün toxunun.</strong></p>
+                    </div>
+                    <div class="details">
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/sync.js"></script>
+    <script src="./js/product.js"></script>
+    <!-- <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/sync.js"></script>
+    <script src="./js/product.js"></script> -->
+    <!-- <script src="./js/index.js"></script> -->
+</body>
+
+</html>

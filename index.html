@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/firebase-init.js"></script>
+    <!-- <script src="./assets/js/db.js"></script> -->
+    <script src="./js/index.js"></script>
+    <title>My Businnes App</title>
+</head>
+
+<body>
+    <button class="button0" onclick="toggleMenu()">☰ menu</button>
+
+    <div id="menu" class="sidebar">
+        <!-- <a href="#" onclick="toggleMenu()">✖ Exit</a> -->
+
+        <header>
+            <nav>
+                <a class="button1" href="#home" onclick="loadPage('home')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-house"></i>
+                    Ev
+                </a>
+
+                <a class="button1" href="#sales" onclick="loadPage('sales')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-shop"></i>
+                    Satışlar
+                </a>
+
+                <a class="button1" href="#purchases" onclick="loadPage('purchases')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-cart-shopping"></i>
+                    Alışlar
+                </a>
+
+                <a class="button1" href="#customers" onclick="loadPage('customers')">
+                    <i style="margin-right: 5px;" class="fas fa-users"></i>
+                    Müştərilər
+                </a>
+
+                <a class="button1" href="#products" onclick="loadPage('products')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-barcode"></i>
+                    Məhsullar
+                </a>
+
+                <a class="button1" href="#reports" onclick="loadPage('reports')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-chart-line"></i>
+                    Raportlar
+                </a>
+
+                <!-- <a class="button1" href="#settings" onclick="loadPage('settings')">
+                    <i style="margin-right: 5px;" class="fa-solid fa-sliders"></i>
+                    Ayarlar
+                </a> -->
+
+                <!-- SYNC düyməsi – sol menyunun ən altı -->
+                <li
+                    style="position: fixed; bottom: 50px; padding: 0px 0px; display:flex; align-items:center; gap:8px; background-color: #333;">
+                    <button id="syncBtn"> <i style="color: white; background-color: #333;" class="fas fa-sync-alt"></i>
+                    </button>
+                    <span id="syncStatus" style="font-size:16px; color:white;">Offline</span>
+                </li>
+
+            </nav>
+
+            <div> </div>
+
+        </header>
+
+    </div>
+
+    <main id="app-content">
+        <h2>Kontent buraya yüklənir...</h2>
+    </main>
+
+</body>
+
+<!-- <script src="./js/product.js"></script> -->
+
+</html>

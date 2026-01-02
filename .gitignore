@@ -1,0 +1,13 @@
+node_modules/
+venv/
+__pycache__/
+.firebase/
+firebase-debug.log
+.DS_Store
+*.pyc
+*.pyo
+env/
+.env
+dist/
+build/
+.vscode/

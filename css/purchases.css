@@ -1,0 +1,386 @@
+/* ===== Alışlar səhifəsi ===== */
+
+#purchases-page-content {
+    padding-bottom: 24px;
+}
+
+/* Axtarış paneli */
+#p-search-panel {
+    background: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+}
+
+#p-search {
+    width: 96%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+}
+
+#p-search-results {
+    margin-top: 8px;
+    display: grid;
+    gap: 6px;
+}
+
+/* Alışlar siyahısı (çeklər) */
+.purchase-list {
+    display: grid;
+    gap: 12px;
+}
+
+.p-card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow .2s ease;
+}
+
+.p-card .summary {
+    background: #f8f9fa;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.p-card .summary .left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.p-card .summary .right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.p-card .details {
+    display: none;
+    padding: 10px 12px;
+}
+
+.p-card.expanded .details {
+    display: block;
+}
+
+.p-items {
+    display: grid;
+    gap: 6px;
+}
+
+.p-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #f1f3f5;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+.p-total {
+    margin-top: 8px;
+    border-top: 1px dashed #e9ecef;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+/* Badges */
+.badge {
+    font-size: .78rem;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.badge.purchase {
+    background: #e7f5ff;
+    color: #1971c2;
+}
+
+/* Active modes (edit/delete) */
+#p-edit-toggle.edit-active {
+    color: #b58100;
+    background: #fff9db;
+    border-bottom: 3px solid #ffd43b;
+}
+
+#p-delete-toggle.delete-active {
+    color: #c92a2a;
+    background: #ffe3e3;
+    border-bottom: 3px solid #ffa8a8;
+}
+
+.p-card.selected-edit .summary {
+    outline: 2px solid #ffd43b;
+    box-shadow: 0 0 0 3px #fff3bf inset;
+}
+
+.p-card.selected-delete .summary {
+    outline: 2px solid #ff6b6b;
+    box-shadow: 0 0 0 3px #ffe3e3 inset;
+}
+
+/* Modal (product picker & edit) – products/sales üslubuna uyğun */
+.pm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 900;
+}
+
+.pm-modal {
+    position: fixed;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    width: min(760px, 94vw);
+    max-height: 75vh;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    z-index: 901;
+}
+
+.pm-header,
+.pm-footer {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pm-footer {
+    border-bottom: none;
+    border-top: 1px solid #e9ecef;
+    justify-content: flex-end;
+}
+
+.pm-close {
+    background: #dc3545;
+    color: #ffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.pm-primary {
+    background: #198754;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pm-body {
+    padding: 10px 12px;
+    overflow: auto;
+    display: grid;
+    gap: 10px;
+}
+
+.pm-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.pm-label {
+    color: #495057;
+    font-weight: 600;
+}
+
+.type-block {
+    display: block;
+}
+
+.pm-list {
+    display: grid;
+    gap: 10px;
+}
+
+.pm-category {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pm-cat-head {
+    background: #f8f9fa;
+    padding: 8px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pm-items {
+    padding: 8px 10px;
+    display: grid;
+    gap: 8px;
+}
+
+.pm-row-item {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 92px;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid #f1f3f5;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.pm-name {
+    font-weight: 600;
+}
+
+.pm-stock {
+    text-align: center;
+    color: #6c757d;
+}
+
+.pm-buy {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+.pm-qty {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+.pm-pick {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* Edit modal (reuse) */
+.em-modal {
+    width: min(760px, 94vw);
+    max-height: 75vh;
+    position: fixed;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
+    z-index: 901;
+    display: flex;
+    flex-direction: column;
+}
+
+.em-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.em-body {
+    padding: 10px 12px;
+    overflow: auto;
+    display: grid;
+    gap: 8px;
+}
+
+.em-footer {
+    padding: 10px 12px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.em-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid #f1f3f5;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.btn-plain {
+    background: #f1f3f5;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Form grid (new product) */
+.form-grid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-grid label {
+    display: grid;
+    gap: 4px;
+    font-size: .95rem;
+    color: #495057;
+}
+
+.form-grid input {
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+}
+
+.hint {
+    font-size: .88rem;
+    color: #6c757d;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}

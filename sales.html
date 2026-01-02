@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satışlar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="./css/products.css" />
+    <link rel="stylesheet" href="./css/sales.css" />
+</head>
+
+<body>
+
+    <div class="page" id="sales-page-content">
+
+        <div class="header-with-icons">
+            <h2>Satışlar</h2>
+            <div class="actions">
+                <button class="action-btn" id="sales-search-toggle" title="Axtarış">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="action-btn" id="sales-add-toggle" title="Yeni Satış">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </button>
+                <button class="action-btn" id="sales-edit-toggle" title="Düzənlə">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="action-btn" id="sales-delete-toggle" title="Sil">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Üst axtarış (tarix üçün) -->
+        <div id="sales-search-panel" class="hidden">
+            <input type="text" id="universal-search-input" placeholder="Müştəri axtar..." autofocus>
+            <div id="universal-search-results"></div>
+        </div>
+
+        <!-- Müştəri seçimi -->
+        <div id="customer-select-panel" class="hidden">
+            <h3>Müştəri Seçimi</h3>
+            <div style="margin:8px 0 10px;">
+                <input id="customer-inline-search" type="text" placeholder="Müştəri axtar..."
+                    style="width:93%;padding:8px 10px;border:1px solid #cfd4da;border-radius:8px;">
+            </div>
+            <div id="customer-list-select">
+                <p>Müştəri datası yüklənir...</p>
+            </div>
+        </div>
+
+        <!-- Satış əməliyyatı -->
+        <div id="sale-transaction-panel" class="hidden">
+            <div class="customer-header">
+                <i class="fa-solid fa-user-check"></i>
+                Müştəri: <span id="current-customer-name">Seçilməyib</span>
+            </div>
+
+            <button id="select-product-btn" class="big-action-btn">
+                <i class="fa-solid fa-boxes-stacked"></i> MƏHSUL SEÇ
+            </button>
+
+            <div id="cart-box-container">
+                <div id="cart-item-list"></div>
+            </div>
+        </div>
+
+        <!-- Tarix -->
+        <div id="future-sales-list">
+            Tamamlanmış satışların siyahısı bura gələcək.
+            <div id="sales-history-list" class="sale-history"></div>
+        </div>
+
+    </div>
+
+    <!-- Ödəniş xülasəsi -->
+    <div id="payment-summary" class="hidden">
+        <div class="summary-line">
+            <span>Seçilmiş Məhsul Sayı:</span>
+            <strong id="item-count-total">0 növ</strong>
+        </div>
+        <div class="summary-line final-total-line">
+            <span>CƏM QİYMƏT:</span>
+            <strong id="final-price-total" class="total-price final">0.00 AZN</strong>
+        </div>
+        <div class="payment-actions">
+            <button id="pay-sell-btn" class="action-sell" disabled>SATILDI</button>
+            <button id="pay-credit-btn" class="action-credit" disabled>BORC VERİLDİ</button>
+            <button id="pay-cancel-btn" class="action-cancel">LƏĞV ET</button>
+        </div>
+    </div>
+
+    <!-- Product Picker Modal (single) -->
+    <div id="product-modal-backdrop" class="modal-backdrop hidden"></div>
+    <div id="product-modal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-header">
+            <h3>Məhsul seç</h3>
+            <button id="pm-close" class="modal-close" title="Bağla">&times;</button>
+        </div>
+        <div class="modal-body">
+            <input id="pm-search" type="text" placeholder="Məhsul axtar..." style="width:100%;margin-bottom:8px;">
+            <div id="pm-list"></div>
+        </div>
+        <div class="modal-footer">
+            <button id="pm-add-selected" class="btn primary">Seçilənləri səbətə əlavə et</button>
+        </div>
+    </div>
+
+    <!-- Edit Sale Modal (single) -->
+    <div id="edit-modal-backdrop" class="modal-backdrop hidden"></div>
+    <div id="edit-modal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-header">
+            <h3>Satışı düzənlə</h3>
+            <div class="em-kind">
+                <label style="margin-right:8px;">
+                    <input type="radio" name="em-kind" value="sell" checked> Satıldı
+                </label>
+                <label>
+                    <input type="radio" name="em-kind" value="credit"> Borc verildi
+                </label>
+            </div>
+            <button id="em-close" class="modal-close" title="Bağla">&times;</button>
+        </div>
+        <div id="em-body" class="modal-body"><!-- JS dolduracaq --></div>
+        <div class="modal-footer">
+            <button id="em-save" class="btn primary">Dəyişiklikləri saxla</button>
+        </div>
+    </div>
+
+    <!-- Skriptlər -->
+    <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/sync.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/customers.js"></script>
+    <script src="./js/sales.js"></script>
+</body>
+
+</html>

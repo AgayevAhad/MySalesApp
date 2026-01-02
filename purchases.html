@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alışlar</title>
+
+    <!-- Ümumi stilləriniz -->
+    <link rel="stylesheet" href="./css/products.css" />
+    <!-- Alışlar üçün stillər -->
+    <link rel="stylesheet" href="./css/purchases.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="page" id="purchases-page-content">
+        <div class="header-with-icons">
+            <h2>Alışlar</h2>
+            <div class="actions">
+                <button class="action-btn" id="p-search-toggle" title="Axtarış"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="action-btn" id="p-add-toggle" title="Yeni Alış"><i
+                        class="fa-solid fa-circle-plus"></i></button>
+                <button class="action-btn" id="p-edit-toggle" title="Düzənlə"><i
+                        class="fa-solid fa-pen-to-square"></i></button>
+                <button class="action-btn" id="p-delete-toggle" title="Sil"><i
+                        class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+
+        <!-- Axtarış paneli -->
+        <div id="p-search-panel" class="hidden">
+            <input type="text" id="p-search" placeholder="Alış tarixçəsində axtar..." />
+            <div id="p-search-results"></div>
+        </div>
+
+        <!-- Alışlar siyahısı -->
+        <div id="purchases-list" class="purchase-list"></div>
+    </div>
+
+    <!-- ALIŞ MODAL -->
+    <div id="purchase-modal-backdrop" class="pm-backdrop hidden"></div>
+    <div id="purchase-modal" class="pm-modal hidden" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+        <div class="pm-header">
+            <h3 id="pm-title"><i class="fa-solid fa-cart-plus"></i> Alış əlavə et</h3>
+        </div>
+
+        <div class="pm-body">
+            <div class="pm-row">
+                <label class="pm-label">Alış növü</label>
+                <select id="purchase-type">
+                    <option value="existing">Stokda olan məhsul</option>
+                    <option value="new">Yeni məhsul</option>
+                </select>
+            </div>
+
+            <!-- Mövcud məhsul bloku -->
+            <div id="pm-existing" class="type-block">
+                <input id="pm-search" type="text" placeholder="Məhsul axtar..." />
+                <div id="pm-list" class="pm-list"><!-- JS kateqoriya + məhsul dolduracaq --></div>
+            </div>
+
+            <!-- Yeni məhsul bloku -->
+            <div id="pm-new" class="type-block hidden">
+                <div class="form-grid">
+                    <label>Ad*<input id="new-name" type="text" placeholder="Məs: Qırmızı alma"></label>
+                    <label>Kateqoriya*
+                        <input list="pm-cat-datalist" id="new-category" type="text" placeholder="Məs: Meyvələr">
+                        <datalist id="pm-cat-datalist"></datalist>
+                    </label>
+                    <label>Vahid (məs: ədəd, kq)<input id="new-units" type="text" placeholder="ədəd"></label>
+                    <label>Başlanğıc stok*<input id="new-qty" type="number" min="0" step="0.01"
+                            placeholder="Miqdar"></label>
+                    <label>Alış qiyməti (AZN)*<input id="new-buy" type="number" min="0" step="0.01"
+                            placeholder="0.00"></label>
+                    <label>Satış qiyməti (AZN)<input id="new-sale" type="number" min="0" step="0.01"
+                            placeholder="(istəyə görə)"></label>
+                    <label>Barkod<input id="new-barcode" type="text" placeholder="(opsional)"></label>
+                    <label>Təsvir<input id="new-desc" type="text" placeholder="(opsional)"></label>
+                </div>
+                <div class="hint">Qeyd: Mövcud məhsullara alış edəndə satış qiymətinə toxunulmur. Yeni məhsul üçün satış
+                    qiymətini sonra Products səhifəsindən də düzənləyə bilərsən.</div>
+            </div>
+        </div>
+
+        <div class="pm-footer">
+            <button id="pm-close" class="pm-close" title="Bağla">Ləğv et</button>
+            <button id="pm-save" class="pm-primary">Əlavə et</button>
+        </div>
+    </div>
+
+    <!-- EDIT MODAL -->
+    <div id="pe-backdrop" class="pm-backdrop hidden"></div>
+    <div id="pe-modal" class="em-modal hidden" role="dialog" aria-modal="true" aria-labelledby="pe-title">
+        <div class="em-header">
+            <h3 id="pe-title"><i class="fa-solid fa-pen-to-square"></i> Alışı düzənlə</h3>
+            <button id="pe-close" class="btn-plain" title="Bağla">&times;</button>
+        </div>
+        <div id="pe-body" class="em-body"><!-- JS ilə sətirlər (qty/buyPrice) --></div>
+        <div class="em-footer">
+            <button id="pe-delete" class="btn-danger">Alışı Sil</button>
+            <button id="pe-save" class="btn-primary">Dəyişiklikləri saxla</button>
+        </div>
+    </div>
+
+    <!-- Data adapterlər (istəsən saxla) -->
+    <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/sync.js"></script>
+
+    <!-- Products & Purchases -->
+    <script src="./js/product.js"></script>
+    <script src="./js/purchases.js"></script>
+</body>
+
+</html>

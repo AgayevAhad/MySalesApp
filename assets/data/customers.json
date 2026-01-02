@@ -1,0 +1,32 @@
+[
+    {
+        "id": "cust1",
+        "name": "Ayxan Əliyev",
+        "phone": "050-123-4567",
+        "email": "aykhan.a@mail.az"
+    },
+    {
+        "id": "cust2",
+        "name": "Nigar Qasimova",
+        "phone": "055-987-6543",
+        "email": "nigar.q@mail.az"
+    },
+    {
+        "id": "cust3",
+        "name": "Cavid Əhmədov",
+        "phone": "070-111-2233",
+        "email": "cavid.a@mail.az"
+    },
+    {
+        "id": "cust4",
+        "name": "Günel Vəliyeva",
+        "phone": "051-444-5566",
+        "email": "gunel.v@mail.az"
+    },
+    {
+        "id": "cust5",
+        "name": "Joan Doe",
+        "phone": "099-000-1122",
+        "email": "joan.d@mail.az"
+    }
+]
